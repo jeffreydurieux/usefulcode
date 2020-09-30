@@ -61,7 +61,7 @@ S <- cbind(as.vector(s1),as.vector(s2)
 # mixing matrix
 set.seed(42)
 A <- matrix(runif(100*4, -2, 2), nrow = 100 )
-
+A <- matrix(rnorm(100*4), nrow = 100 )
 # mix data
 X <- tcrossprod(S, A)
 dim(X)
