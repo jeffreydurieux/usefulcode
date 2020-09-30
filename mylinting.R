@@ -1,11 +1,13 @@
 # Thu Aug  8 10:28:46 2019
 # Author: Jeffrey Durieux, MSc
-
+# Still work in progress
 # What: make a function that customizes the linting process of my code
+library(lintr)
 
+source_file <- get_source_expressions('~/Repositories/CodeFromTom/CLPAR_CheckEmptyClusters (1).R')
 
 ### available linters ###  
-absolute_paths_linter(source_file)
+absolute_path_linter(source_file)
 
 assignment_linter(source_file)
 
