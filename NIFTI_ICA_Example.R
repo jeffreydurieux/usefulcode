@@ -31,7 +31,7 @@ image(nif)
 ### example low resolution spatial maps / FC patterns
 ### see https://www.fmrib.ox.ac.uk/datasets/royalsoc8/
 ### made low resolution version of the templates to save time/memory
-
+### contact Jeffrey Durieux to receive the low res nifti file
 # change path 
 sall <- readNIfTI("/Users/jeffreydurieux/Documents/templates/23x_all_beckmann_8_and_csf_and_wm.nii.gz")
 
