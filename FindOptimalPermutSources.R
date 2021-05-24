@@ -1,4 +1,4 @@
-FindOptimalPermutSingle <- function( Sest , Strue, verbose )
+FindOptimalPermutSingle <- function( Sest , Strue, verbose = FALSE)
 {
   # code to search the optimal permutation of estimated ICA components for
   # comparing it with simulated components
