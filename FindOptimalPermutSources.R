@@ -1,4 +1,4 @@
-FindOptimalPermutSingle <- function( Sest , Strue )
+FindOptimalPermutSingle <- function( Sest , Strue, verbose )
 {
   # code to search the optimal permutation of estimated ICA components for
   # comparing it with simulated components
@@ -19,11 +19,15 @@ FindOptimalPermutSingle <- function( Sest , Strue )
   BestPerm = -9999
   for( permtel in 1:nPerms )
   {
-    if( (permtel%%50) == 0)
+    if(verbose == TRUE)
     {
-      print( paste( "perm: " , permtel , "/" , nPerms ) )
+        if( (permtel%%50) == 0)
+      {
+        print( paste( "perm: " , permtel , "/" , nPerms ) )
+      }
     }
 
+    
     tp = AllPerms[permtel,]
     tempRecovBlock = matrix( -9999 , 1 , 1 )
 
