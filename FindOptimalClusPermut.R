@@ -1,6 +1,7 @@
 FindOptimalClusPermut <- function(Pest, Ptrue){
   # find optimal cluster permutation of estimated clustering
   # compared to simulated clustering
+  # Author(s): Tom F. Wilderjans and minor adjustments by Jeffrey Durieux
   clus <- length(unique(Pest))
 
   AllPerms = permutations( n = clus , r = clus)
