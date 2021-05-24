@@ -2,6 +2,8 @@ FindOptimalPermutSingle <- function( Sest , Strue )
 {
   # code to search the optimal permutation of estimated ICA components for
   # comparing it with simulated components
+  # Author(s): Tom F. Wilderjans and minor adjustments by Jeffrey Durieux
+
   #JD: code from Tom, adjusted for matrix vs matrix comparison
   #Sest, Strue (nVoxels x nSources)
 
