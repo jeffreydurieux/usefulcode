@@ -5,15 +5,15 @@ procr <- function ( X , Ytarget )
   # INPUT
   #   X (n x p1): matrix that will be rotated (orthogonally)
   #   Ytarget (n x p2): target matrix
-  
+
   # if p1 >= p2: Tmat is orthonormal
   # if p1 < p2: t(Tmat) is orthonormal (Tmat is not orthonormal)
-  
+
   library(MASS)
-  
+
   if ( dim(X)[1] == dim(Ytarget)[1]  )
   {
-    source("ComputePhiMatrix.R")
+    #source("ComputePhiMatrix.R")
     temp = svd( t(X) %*% Ytarget )
     #LowestDim = min( dim( t(X) %*% Ytarget ) )
     #p = temp$u[ , 1:LowestDim ]
@@ -24,20 +24,20 @@ procr <- function ( X , Ytarget )
     RotationMatrix = Tmat
     Fit = sum( ( Yhat - Ytarget ) ^ 2 )
     PhiMatrix = ComputePhiMatrix( Ytarget , Yhat )
-    
+
     RotationMatrixNonorthogonal = ginv( t(X) %*% X ) %*% t(X) %*% Ytarget
     ###RotationMatrixNonorthogonal = solve( t(X) %*% X ) %*% t(X) %*% Ytarget
     YhatNonorthogonal = X %*% RotationMatrixNonorthogonal
     FitNonorthogonal = sum( ( YhatNonorthogonal - Ytarget ) ^ 2 )
     PhiMatrixNonorthogonal = ComputePhiMatrix( Ytarget , YhatNonorthogonal )
-    
+
     Out = list()
     Out$Yhat = Yhat #orthogonally rotated X matrix
     Out$RotationMatrix = RotationMatrix
     Out$Fit = Fit
     Out$PhiMatrix = PhiMatrix
     Out$TuckerCongruence = mean( abs( diag( PhiMatrix ) ) )
-    
+
     Out$NonOrthogonal$Yhat = YhatNonorthogonal
     Out$NonOrthogonal$RotationMatrix = RotationMatrixNonorthogonal
     Out$NonOrthogonal$Fit = FitNonorthogonal
