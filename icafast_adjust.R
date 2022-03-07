@@ -56,7 +56,7 @@ icafast_adjust <- function (X, nc, center = TRUE, maxit = 100, tol = 1e-06, Rmat
   Pmat <- xeig$vec[, 1:nc] %*% Dmat
   Xw <- X %*% Pmat
   if (nc == 1L) {
-    return(list(S = Xw, M = Mprt, W = t(Pmat), Y = Xw, Q = t(Pmat), 
+    return(list(S = Xw, M = t(Mprt), W = t(Pmat), Y = Xw, Q = t(Pmat), 
                 R = matrix(1), vafs = (sum(Mprt^2) * nobs)/sum(X^2), 
                 iter = NA, alg = alg, fun = fun, alpha = alpha))
   }
